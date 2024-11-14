@@ -1,0 +1,47 @@
+.postcard{
+    width: 100%;
+    padding: 20px;
+    background: var(--secondary);
+    border-radius: 15px;
+    margin-top: 15px;
+    display: flex;
+}
+
+.postcard img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+.postHead{
+    display: flex;
+    align-items: center;
+}
+
+.postHead h4{
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.postHead p{
+    font-size: 12px;
+    color: var(--greycolor);
+}
+
+.postInfo span{
+    font-size: 10px;
+    color: var(--greycolor);
+}
+
+.postInfo h1{
+    font-size: 15px;
+    font-weight: 400;
+    margin: 10px 0px;
+    line-height: 24px;
+}
+
+
+

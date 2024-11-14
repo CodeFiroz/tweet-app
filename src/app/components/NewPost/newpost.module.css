@@ -1,0 +1,40 @@
+.newform{
+    width: 100%;
+    display: flex;
+}
+
+.newform img{
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    margin-right: 15px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.newform div{
+    width: calc(100% - 60px);
+}
+
+.newform textarea{
+    padding: 10px;
+    width: 100%;
+    resize: none;
+    background: #28343E;
+    border: 0;
+    outline: 0;
+    font-weight: 600;
+    color: #ccc;
+}
+
+.newform button{
+    padding: 8px 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 10px;
+    background: #fff;
+    color: var(--background);
+    border-radius: 30px;
+    border: 0;
+    outline: 0;
+}

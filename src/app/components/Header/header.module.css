@@ -1,0 +1,77 @@
+.header{
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .leftSide{
+    display: flex;
+    align-items: center;
+}
+
+.header .leftSide a{
+    color: var(--themecolor);
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.header .leftSide input{
+    width: 300px;
+    padding: 8px 14px;
+    border: 0;
+    outline: 0;
+    background: var(--secondary);
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--foreground);
+}
+
+.header .leftSide input::placeholder{
+    color: var(--greycolor);
+}
+
+.header .signIn button{
+    display: flex;
+    align-items: center;
+    padding: 5px 20px 5px 5px;
+    border-radius: 40px;
+    background: var(--secondary);
+    border: 0;
+    color: var(--foreground);
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+}
+
+.header .signIn button img{
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    background: var(--foreground);
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.header .signIn button:hover{
+    color: var(--themecolor);
+    background: var(--foreground);
+}
+
+.header .signIn button:hover img{
+    background: var(--greycolor);
+}
+
+
+@media (max-width: 768px) {
+    .header{padding: 10px;}
+
+    .header .leftSide input{width: 250px;}
+
+    .header .signIn button{padding: 5px;}
+
+    .header .signIn button img{margin-right: 0;}
+
+    .header .signIn button span{display: none;}
+}

@@ -1,0 +1,38 @@
+
+.signIn button{
+    display: flex;
+    align-items: center;
+    padding: 5px 20px 5px 5px;
+    border-radius: 40px;
+    background: var(--secondary);
+    border: 0;
+    color: var(--foreground);
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+}
+
+.signIn button img{
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    background: var(--foreground);
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.signIn button:hover{
+    color: var(--themecolor);
+    background: var(--foreground);
+}
+
+.signIn button:hover img{
+    background: var(--greycolor);
+}
+
+@media (max-width: 768px) {
+    .signIn button{padding: 5px;}
+
+    .signIn button img{margin-right: 0;}
+
+    .signIn button span{display: none;}
+}
