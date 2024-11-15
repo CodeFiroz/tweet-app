@@ -9,7 +9,7 @@ const UserCard = () => {
             <div className={style.usercard}>
 
                 <div className={style.cardHeader}></div>
-                <Image src='/img/monster.png' width={50} height={50} />
+                <Image src='/img/monster.png' width={50} height={50} alt="user" />
                 <h3>Firoz Ansari</h3>
                 <span>@khanfiroz4045</span>
 

@@ -1,8 +1,6 @@
-"use client";
-
 import style from './signin.module.css';
 import Image from "next/image";
-import { signIn, useSession } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react'; // Import signOut
 import { useState, useEffect } from 'react';
 
 export default function SignInButton() {
@@ -19,7 +17,7 @@ export default function SignInButton() {
   return (
     <div className={style.signIn}>
       {session ? (
-        <button onClick={() => signIn("google")}>
+        <button onClick={() => signOut()}> {/* Use signOut here */}
           <Image src='/img/monster.png' width={40} height={40} alt="User image" />
           <span>{username}</span>
         </button>

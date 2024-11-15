@@ -7,7 +7,7 @@ const PostCard = () => {
     <>
         <div className={style.postcard}>
             <Link href='/'>
-                <Image src='/img/user/3.jpg' width={50} height={50} />
+                <Image src='/img/user/3.jpg' width={50} height={50} alt='user' />
             </Link>    
                 <div className={style.postInfo}>
                     

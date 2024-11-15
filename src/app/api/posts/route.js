@@ -2,6 +2,8 @@ import dbConnect from "@/app/lib/mongodb";
 import Post from "@/app/models/Post";
 
 export default async function handler(req, res) {
+
+
   await dbConnect();
 
   if (req.method === 'POST') {
