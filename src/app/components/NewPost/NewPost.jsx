@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import style from './newpost.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -8,26 +8,31 @@ const NewPost = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/api/posts', {
-        method: 'POST',  // Make sure the method is POST
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ "content": "Hellow" }),  // Send the content as part of the request body
+      const response = await fetch('/api/hello', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ post: content }), // Ensure `content` is defined
       });
   
+      // Check if the response is successful
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status} ${response.statusText}`);
+      }
+  
       const data = await response.json();
+      console.log("Server response:", data);
   
       if (data.success) {
-        alert("Post Added to Database");
+        alert("Post submitted successfully!");
       } else {
-        alert("Error uploading post");
+        alert(`Failed to submit post: ${data.result || "Unknown error"}`);
       }
     } catch (error) {
-      console.log(error);
-      alert("Failed");
+      console.error("Error:", error);
+      alert("Failed to submit post. Please try again.");
     }
   };
+  
   return (
     <div className={`section ${style.newform}`}>
       <Image src='/img/monster.png' width={50} height={50} alt="Monster icon" />

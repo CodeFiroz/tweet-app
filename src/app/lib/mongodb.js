@@ -1,33 +1,20 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = 'mongodb://khanfiroz4045:n8QpVqQFf2BwhQfB@cluster0.mongodb.net/?ssl=true&replicaSet=atlas-rrztp2-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0';
+const dbConnect = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log('MongoDB connected:', conn.connection.host);
 
-if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable');
-}
-
-let cached = global.mongoose;
-
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
-
-async function dbConnect() {
-  if (cached.conn) {
-    return cached.conn;
+    // Check connection state
+    if (mongoose.connection.readyState === 1) {
+      console.log('MongoDB is connected.');
+    } else {
+      console.log('MongoDB connection state:', mongoose.connection.readyState);
+    }
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error.message);
+    process.exit(1); // Exit process if connection fails
   }
-
-  if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      return mongoose;
-    });
-  }
-  cached.conn = await cached.promise;
-  return cached.conn;
-}
+};
 
 export default dbConnect;
